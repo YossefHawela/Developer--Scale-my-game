@@ -1,0 +1,8 @@
+1- #164863 - 22, 72, 99
+2- #427d9d - 66, 125, 157
+3- #9bbec8 - 155, 190, 200
+4- #ddf2fd - 221, 242, 253
+
+And any colors near of those.
+
+https://maketintsandshades.com/#164863,427d9d,9bbec8,ddf2fd
