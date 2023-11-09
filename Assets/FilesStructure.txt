@@ -1,0 +1,5 @@
+Scenes
+Scripts----> Components folder----> Component folder ----> component scripts
+Scripts----> General Scripts folder ---> Script (Script can be used for different components)
+Sprites----> Components folder---> component folder ----> component sprites
+Sprites----> General Sprites folder ---> sprite (sprite can be used for different components)
