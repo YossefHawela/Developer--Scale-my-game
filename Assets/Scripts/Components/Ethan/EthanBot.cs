@@ -38,6 +38,7 @@ public class EthanBot : MonoBehaviour
                     GeneralMetholds.instance.WaitToDo(() =>
                     {
                         BlackScreenManager.Instance.Hide();
+                        PcScreen.Instance.Show();
                     }, 0.5f);
 
 
