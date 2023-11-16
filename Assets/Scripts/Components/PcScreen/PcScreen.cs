@@ -7,8 +7,10 @@ public class PcScreen : HIdeShowGO
     public static PcScreen Instance;
 
 
+
     private void Awake()
     {
         Instance = this;
     }
+
 }

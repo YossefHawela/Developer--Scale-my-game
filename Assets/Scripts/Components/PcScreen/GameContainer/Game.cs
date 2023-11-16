@@ -16,6 +16,8 @@ public class Game : MonoBehaviour
 
     public void StartGame()
     {
+        Desktop.Instance.Hide();
+
         Instantiate(GamePrefap,transform);
     }
     public void ExitGame()
@@ -24,8 +26,12 @@ public class Game : MonoBehaviour
 
         if (game)
         {
-            Destroy(game);
+            Destroy(game.gameObject);
         }
+
+        GameContainer.Instance.Hide();
+        Desktop.Instance.Show();
+        
     }
 
 }

@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.TextCore.Text;
 
 public class DialogBoxManager : HIdeShowGO
 {
@@ -11,7 +10,9 @@ public class DialogBoxManager : HIdeShowGO
     [SerializeField]
     private TextMeshProUGUI MessageContent;
 
-    private UnityAction Action;
+    private Action Action;
+
+    private Action LastAction;
 
     private void Awake()
     {
@@ -21,7 +22,15 @@ public class DialogBoxManager : HIdeShowGO
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            Action();
+
+            if (Action != null && LastAction!= Action)
+            {
+                LastAction = Action;
+                Action();
+
+            }
+
+
         }
     }
     /// <summary>
@@ -32,8 +41,9 @@ public class DialogBoxManager : HIdeShowGO
     {
         MessageContent.text= Content;
     }
-    public void SetActionAfterSpaceClicked(UnityAction action)
+    public void SetActionAfterSpaceClicked(Action action)
     {
-        Action= action;
+        Action = action;
+        
     }
 }

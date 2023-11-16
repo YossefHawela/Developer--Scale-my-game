@@ -249,6 +249,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3694376023595687602}
     m_Modifications:
+    - target: {fileID: 1990954190774317779, guid: 1f03616840e591440af23f6ae73661b1,
+        type: 3}
+      propertyPath: GameIcon
+      value: 
+      objectReference: {fileID: 4383998594687011348}
+    - target: {fileID: 1990954190774317779, guid: 1f03616840e591440af23f6ae73661b1,
+        type: 3}
+      propertyPath: MessageIcon
+      value: 
+      objectReference: {fileID: 1775717673}
     - target: {fileID: 1990954190774317780, guid: 1f03616840e591440af23f6ae73661b1,
         type: 3}
       propertyPath: m_Pivot.x
@@ -364,6 +374,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2083739955102810750, guid: 1f03616840e591440af23f6ae73661b1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 54.93994
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083739955102810750, guid: 1f03616840e591440af23f6ae73661b1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -125.880005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503735504618880268, guid: 1f03616840e591440af23f6ae73661b1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 54.93994
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537278993986249708, guid: 1f03616840e591440af23f6ae73661b1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -37.80005
+      objectReference: {fileID: 0}
     - target: {fileID: 6537278993986249708, guid: 1f03616840e591440af23f6ae73661b1,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -451,7 +481,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2946556070793202373}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &354636301
+--- !u!114 &1775717673
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -460,7 +490,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9101451898562652872}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d913bdac953faee44a56c6ab7f4bc370, type: 3}
+  m_Script: {fileID: 11500000, guid: ee738dc8b9d5c64439289a20404cf924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &4167519954268247502
@@ -653,7 +683,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8195656000017734036}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 258639580}
+        m_TargetAssemblyTypeName: Game, Assembly-CSharp
+        m_MethodName: ExitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7856777090143854327 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6115572131057191737, guid: 5ea77838859d7824d9f21c95219d9abe,

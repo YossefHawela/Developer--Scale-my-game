@@ -11,7 +11,6 @@ public class GameIcon : ClickableIcon
         {
             return delegate 
             {
-                Desktop.Instance.Hide();
                 GameContainer.Instance.Show();
                 Game.Instance.StartGame();
             };

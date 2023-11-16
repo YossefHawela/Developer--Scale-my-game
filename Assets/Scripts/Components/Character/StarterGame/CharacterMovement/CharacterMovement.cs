@@ -24,22 +24,25 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
-        // Player movement
-        float forwardBackward = Input.GetAxis("Vertical") * movementSpeed * Time.deltaTime;
-        float leftRight = Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime;
+        if (!GameConstraints.Instance.IsGamePaused)
+        {
+            // Player movement
+            float forwardBackward = Input.GetAxis("Vertical") * movementSpeed * Time.deltaTime;
+            float leftRight = Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime;
 
-        Vector3 movement = transform.forward * forwardBackward + transform.right * leftRight;
+            Vector3 movement = transform.forward * forwardBackward + transform.right * leftRight;
 
-        characterController.Move(movement);
+            characterController.Move(movement);
 
-        // Player rotation (looking around)
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+            // Player rotation (looking around)
+            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        verticalRotation -= mouseY;
-        verticalRotation = Mathf.Clamp(verticalRotation, -90f, 90f);
+            verticalRotation -= mouseY;
+            verticalRotation = Mathf.Clamp(verticalRotation, -90f, 90f);
 
-        playerCamera.transform.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
-        transform.Rotate(Vector3.up * mouseX);
+            playerCamera.transform.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
+            transform.Rotate(Vector3.up * mouseX);
+        }
     }
 }
