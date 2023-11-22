@@ -104,6 +104,7 @@ public class EthanBot : MonoBehaviour
                     //Desktop.Instance.Show();
                     Desktop.Instance.ShowMessageIcon();
                     Desktop.Instance.DeActiveGameIcon();
+                    MessageWriter.Instance.SetTextboxText(GetDialogMessage("I just lunched"));
 
                 });
                 break;
@@ -134,6 +135,8 @@ public class EthanBot : MonoBehaviour
                 return "I refuse to accept this as the end of my gaming journey. I have to reach out to the developers for an explanation or a solution, this was just a misunderstanding, that there was still a chance for the epic adventures I had imagined for sure.";
             case "I actually know the developer":
                 return "I actually know the developer of the game, We had connected through online forums and shared our enthusiasm for gaming, i will close the game and message him. ";
+            case "I just lunched":
+                return "I just launched your game 'talee,' and it's showing a blank room with no gameplay. Is this a glitch? iam Really confused and disappointed. Can you please help?";
             default:
                 return "";
         }

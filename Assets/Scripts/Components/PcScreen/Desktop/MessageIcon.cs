@@ -3,26 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameIcon : ClickableIcon
+public class MessageIcon : ClickableIcon
 {
-    public override Action action 
+    public override Action action
     {
         get
         {
-            return delegate 
+            return delegate
             {
-                GameContainer.Instance.Show();
                 Desktop.Instance.ActiveControlBox();
                 Desktop.Instance.Hide();
 
-                Game.Instance.StartGame();
-
-                Desktop.Instance.SetControlBoxExitButtonEvent(delegate
+                MessagesAppManager.Instance.Show();
+                Desktop.Instance.SetControlBoxExitButtonEvent(delegate 
                 {
-                    Game.Instance.ExitGame();
+                    MessagesAppManager.Instance.Hide();
                     Desktop.Instance.Show();
                     Desktop.Instance.DeActiveControlBox();
-
                 });
             };
         }

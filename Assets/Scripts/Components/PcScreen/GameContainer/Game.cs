@@ -30,6 +30,7 @@ public class Game : MonoBehaviour
         }
 
         GameContainer.Instance.Hide();
+        Desktop.Instance.DeActiveControlBox();
         Desktop.Instance.Show();
         
     }

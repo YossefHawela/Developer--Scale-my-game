@@ -9,4 +9,6 @@ public class MessagesAppManager : HIdeShowGO
     {
         Instance = this;
     }
+
+
 }
