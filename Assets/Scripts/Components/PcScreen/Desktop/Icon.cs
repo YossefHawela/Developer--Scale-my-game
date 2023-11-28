@@ -17,14 +17,14 @@ public class Icon : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        var cl = image.color;
+        Color cl = image.color;
         image.color = new Color(cl.r, cl.g, cl.b,100/255f);
     }
 
     
     public void OnPointerExit(PointerEventData eventData)
     {
-        var cl = image.color;
+        Color cl = image.color;
         image.color = new Color(cl.r, cl.g, cl.b, 1/255f);
     }
 

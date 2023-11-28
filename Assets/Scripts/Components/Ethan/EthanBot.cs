@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.VersionControl;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EthanBot : MonoBehaviour
 {
@@ -104,9 +107,30 @@ public class EthanBot : MonoBehaviour
                     //Desktop.Instance.Show();
                     Desktop.Instance.ShowMessageIcon();
                     Desktop.Instance.DeActiveGameIcon();
+                    MessagesAppManager.Instance.Show();
                     MessageWriter.Instance.SetTextboxText(GetDialogMessage("I just lunched"));
+                    MessagesAppManager.Instance.Hide();
+
 
                 });
+                break;
+            case "I just launched your game 'talee,'\n And it's showing a blank white room with no gameplay.":               
+                GeneralMetholds.instance.WaitToDo(delegate 
+                {
+                    MessageWriter.Instance.SetTextboxText(GetDialogMessage("I just launched your game 'talee,'\n And it's showing a blank white room with no gameplay."));
+                }, 0.5f);
+                break;
+            case "the deal":
+                GeneralMetholds.instance.WaitToDo(delegate
+                {
+                    MessageWriter.Instance.SetTextboxText(GetDialogMessage("What?"));
+                }, 1.5f);
+                break;
+            case "What?! Are you kidding me? \nTwo years of anticipation for a white room? \nThat's not cool, \nit's incredibly frustrating and disappointing!":
+                GeneralMetholds.instance.WaitToDo(delegate
+                {
+                    MessageWriter.Instance.SetTextboxText(GetDialogMessage(Event));
+                }, 0.5f);
                 break;
             default:
                 break ;
@@ -136,7 +160,13 @@ public class EthanBot : MonoBehaviour
             case "I actually know the developer":
                 return "I actually know the developer of the game, We had connected through online forums and shared our enthusiasm for gaming, i will close the game and message him. ";
             case "I just lunched":
-                return "I just launched your game 'talee,' and it's showing a blank room with no gameplay. Is this a glitch? iam Really confused and disappointed. Can you please help?";
+                return "I just launched your game 'talee,'\n And it's showing a blank white room with no gameplay.";
+            case "I just launched your game 'talee,'\n And it's showing a blank white room with no gameplay.":
+                return "Is this a glitch? iam Really confused and disappointed.\n Can you please help?";
+            case "What?":
+                return "What?! Are you kidding me? \nTwo years of anticipation for a white room? \nThat's not cool, \nit's incredibly frustrating and disappointing!";
+            case "What?! Are you kidding me? \nTwo years of anticipation for a white room? \nThat's not cool, \nit's incredibly frustrating and disappointing!":
+                return "I expected so much more from you talee. \nThis isn't what I signed up for. \nI need answers, not sarcasm.";
             default:
                 return "";
         }

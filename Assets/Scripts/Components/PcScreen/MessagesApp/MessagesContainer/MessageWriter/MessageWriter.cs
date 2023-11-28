@@ -11,20 +11,33 @@ public class MessageWriter : HIdeShowGO
     private TMP_InputField WriteMessageTextBox;
     [SerializeField]
     private Button SendButton;
+
+    private string WriteMessageTextBoxTextvalue;
     private void Awake()
     {
         Instance= this;
+
+        WriteMessageTextBox.onValueChanged.AddListener((value) =>
+        {
+            WriteMessageTextBoxTextvalue = value;
+        });
     }
 
-    public void SupmitMessage(TextMeshProUGUI textMeshProUGUI)
+    public void SupmitMessage()
     {
-        MessagesContainer.Instance.AddMessage(new Message() { Content = textMeshProUGUI.text, date = System.DateTime.Now, IsPlayersMessage = true });
-        textMeshProUGUI.text = "";
+        if (WriteMessageTextBox.text != "") 
+        {
+            MessagesContainer.Instance.AddMessage(new Message() { Content = WriteMessageTextBoxTextvalue, date = System.DateTime.Now, IsPlayersMessage = true });
+            TaleeBot.Instance.DoAction(WriteMessageTextBoxTextvalue);
+            WriteMessageTextBox.text = "";
+        }
     }
 
     public void SetTextboxText(string text)
     {
         WriteMessageTextBox.text = text;
+        WriteMessageTextBoxTextvalue = text;
+
     }
     public void DeActiveWriteMessageTextBox()
     {
