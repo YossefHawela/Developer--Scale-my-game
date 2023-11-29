@@ -7,6 +7,10 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Instance;
 
     public AudioClip ClickClackSound;
+    public AudioClip WalkSound;
+    public AudioClip ReciveMessageSound;
+    public AudioClip SendMessageSound;
+
 
     private void Awake()
     {

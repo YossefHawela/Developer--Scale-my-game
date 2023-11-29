@@ -29,6 +29,7 @@ public class MessageWriter : HIdeShowGO
         {
             MessagesContainer.Instance.AddMessage(new Message() { Content = WriteMessageTextBoxTextvalue, date = System.DateTime.Now, IsPlayersMessage = true });
             TaleeBot.Instance.DoAction(WriteMessageTextBoxTextvalue);
+            SoundManager.Instance.CreateAudioSource(SoundManager.Instance.SendMessageSound);
             WriteMessageTextBox.text = "";
         }
     }

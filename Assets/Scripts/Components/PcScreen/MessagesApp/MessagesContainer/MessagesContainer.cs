@@ -94,13 +94,13 @@ public class MessagesContainer : HIdeShowGO
         ScrollDown();
     }
 
-    private void ScrollDown()
+    public void ScrollDown()
     {
-        StartCoroutine(IEscrollDown());
+        if (gameObject.activeInHierarchy)
+            StartCoroutine(IEscrollDown());
     }
     private IEnumerator IEscrollDown()
     {
-
         do
         {
             react.verticalNormalizedPosition -= 0.1f;

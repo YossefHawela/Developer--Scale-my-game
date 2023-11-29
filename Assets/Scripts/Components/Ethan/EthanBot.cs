@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -132,6 +130,56 @@ public class EthanBot : MonoBehaviour
                     MessageWriter.Instance.SetTextboxText(GetDialogMessage(Event));
                 }, 0.5f);
                 break;
+            case "Realy?BigRoom":
+                DialogBoxManager.Instance.Show();
+                DialogBoxManager.Instance.SetMessageContent(GetDialogMessage(Event));
+                DialogBoxManager.Instance.SetActionAfterSpaceClicked(() =>
+                {
+                    DialogBoxManager.Instance.Hide();
+
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+
+                    GeneralMetholds.instance.WaitToDo(delegate
+                    {
+                        DoAction("Talee's Message");
+                    }, 0.5f);
+                });
+                break;
+            case "Talee's Message":
+                TaleeBot.Instance.DoAction(Event);
+                Desktop.Instance.DeActiveGameIcon();
+                break;
+            case "BiggerWhiteRoom?Why?":
+                GeneralMetholds.instance.WaitToDo(delegate
+                {
+                    MessageWriter.Instance.SetTextboxText(GetDialogMessage(Event));
+                }, 0.5f);
+                break;
+            case "oh yeah sure":
+                GeneralMetholds.instance.WaitToDo(delegate
+                {
+                    MessageWriter.Instance.SetTextboxText(GetDialogMessage(Event));
+                }, 0.5f);
+                break;
+            case "Seriously? A bigger white room? \nIs this some kind of joke? \nI was expecting an epic adventure":
+                GeneralMetholds.instance.WaitToDo(delegate
+                {
+                    MessageWriter.Instance.SetTextboxText(GetDialogMessage(Event));
+                }, 0.5f);
+                break;
+            case "Not an endless stroll through a white void. \nThis is beyond disappointing. \nTalee, you've got to be kidding me!":
+                GeneralMetholds.instance.WaitToDo(delegate
+                {
+                    MessageWriter.Instance.SetTextboxText(GetDialogMessage(Event));
+                }, 0.5f);
+                break;
+            case "I need more than just space to walk \nI need a game with substance, challenges, and excitement.":
+                GeneralMetholds.instance.WaitToDo(delegate
+                {
+                    MessageWriter.Instance.SetTextboxText(GetDialogMessage(Event));
+                }, 0.5f);
+                break;
             default:
                 break ;
         }
@@ -167,6 +215,18 @@ public class EthanBot : MonoBehaviour
                 return "What?! Are you kidding me? \nTwo years of anticipation for a white room? \nThat's not cool, \nit's incredibly frustrating and disappointing!";
             case "What?! Are you kidding me? \nTwo years of anticipation for a white room? \nThat's not cool, \nit's incredibly frustrating and disappointing!":
                 return "I expected so much more from you talee. \nThis isn't what I signed up for. \nI need answers, not sarcasm.";
+            case "Realy?BigRoom":
+                return "Really? Again? This has to be some kind of joke, What's the point of a bigger white room? I expected an epic adventure, not an endless void to aimlessly walk in. This is beyond frustrating.";
+            case "BiggerWhiteRoom?Why?":
+                return "oh yeah sure";
+            case "oh yeah sure":
+                return "Seriously? A bigger white room? \nIs this some kind of joke? \nI was expecting an epic adventure";
+            case "Seriously? A bigger white room? \nIs this some kind of joke? \nI was expecting an epic adventure":
+                return "Not an endless stroll through a white void. \nThis is beyond disappointing. \nTalee, you've got to be kidding me!";
+            case "Not an endless stroll through a white void. \nThis is beyond disappointing. \nTalee, you've got to be kidding me!":
+                return "I need more than just space to walk \nI need a game with substance, challenges, and excitement.";
+            case "I need more than just space to walk \nI need a game with substance, challenges, and excitement.":
+                return "Please tell me this is just another prank \nAnd there's more to this than meets the eye!";
             default:
                 return "";
         }

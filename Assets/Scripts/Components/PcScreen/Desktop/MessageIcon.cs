@@ -17,6 +17,7 @@ public class MessageIcon : ClickableIcon
                 Desktop.Instance.Hide();
 
                 MessagesAppManager.Instance.Show();
+                MessagesContainer.Instance.ScrollDown();
                 Desktop.Instance.SetControlBoxExitButtonEvent(delegate 
                 {
                     MessagesAppManager.Instance.Hide();
